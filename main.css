@@ -1,0 +1,52 @@
+.main {
+    display: grid;
+    grid-template-rows: 3fr 1fr 3fr;
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+    grid-template-areas: "slider-arrows healthy thirsty thirsty"
+                         "slider-arrows healthy slider-dots orange"
+                          "freshy healthy slider-dots orange";
+
+    /*grid-template: "slider-arrows healthy thirsty thirsty" 3fr*/
+    /*               "slider-arrows healthy slider-dots orange" 1fr*/
+    /*               "freshy healthy slider-dots orange" 3fr / 2fr 1fr 1.5fr 1.5fr;*/
+}
+
+
+.slider-arrows {
+    position: relative;
+    grid-area: slider-arrows;
+}
+
+.slider-arrows__items-wrapper {
+
+}
+
+.slider-arrows__item {
+
+}
+
+.slider-arrows__nav {
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+.slider-arrows__arrow {
+
+}
+
+.slider-arrows__arrow--left {
+
+}
+
+.btn {
+
+}
+
+.slider-arrows__btn {
+
+}
+
+.slider-arrows__arrow--right {
+
+}
