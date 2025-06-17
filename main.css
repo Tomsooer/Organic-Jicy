@@ -248,3 +248,67 @@
     right: 0;
     color: red;
 }
+
+
+.wrapper-down {
+    display: grid;
+    grid-template-columns: 4.5fr 1.5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "footer sidebar";
+}
+
+.footer {
+ grid-area: footer;
+}
+
+.socials {
+
+}
+
+.socials__link {
+
+}
+
+.form {
+
+}
+
+.form__title {
+
+}
+
+.form__row {
+
+}
+
+.form__input {
+
+}
+
+.form__submit-btn {
+
+}
+
+.copy {
+
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.common {
+
+}
+
+.title {
+
+}
+
+.common__desc {
+
+}
+
+.btn-btn__rounded {
+
+}
