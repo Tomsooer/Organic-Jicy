@@ -186,6 +186,7 @@
     max-width: 60%;
     hyphens: auto;
 }
+
 .thirsty {
     grid-area: thirsty;
     background-color: #FFBA4A;
@@ -258,43 +259,95 @@
 }
 
 .footer {
- grid-area: footer;
+    padding-top: 80px;
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr 1fr;
+    grid-template-rows: max-content 100%;
+    grid-template-areas: ". social form logo" " . . . copy ";
+    background: #2f2f2f;
+    color: #fff;
+    align-content: center;
+
 }
 
 .socials {
-
+ grid-area: socials;
+    display: flex;
+    gap: 10px;
 }
 
 .socials__link {
+    border: 2px solid ;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
 
+.social__link:active {
+    opacity: 0.6;
+}
+
+.social__link:hover {
+    opacity: 0.8;
+}
+
+.socials__icon {
+    width: 20px;
+    height: 20px;
 }
 
 .form {
-
+    grid-area: form;
+    text-transform: uppercase;
 }
 
 .form__title {
-
+    font-size: 18px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
 }
 
 .form__row {
-
+    display: flex;
 }
 
 .form__input {
-
+    height: 40px;
+    width: 200px;
+    padding: 0 20px;
+    outline: none;
+    text-transform: uppercase;
 }
 
 .form__submit-btn {
+    background-color: #00C2BA;
+    color: #000;
+    height: 40px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background-color 0.2s;
+}
 
+.form__submit-btn:hover {
+    background-color: #00eae0;
+}
+
+.form__submit-btn:active {
+    background-color: #00aaaa;
 }
 
 .copy {
-
+    grid-area: copy;
 }
 
 .sidebar {
     grid-area: sidebar;
+    background: #00C2BA;
 }
 
 .common {
@@ -310,5 +363,13 @@
 }
 
 .btn-btn__rounded {
-
+    border-radius: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
+
+.sidebar p + .btn {
+    margin-top: 20px;
+}
+
+
