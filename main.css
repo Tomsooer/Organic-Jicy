@@ -272,7 +272,7 @@
 }
 
 .socials {
- grid-area: socials;
+   grid-area: socials;
     display: flex;
     gap: 10px;
 }
@@ -350,14 +350,6 @@
     background: #00C2BA;
 }
 
-.common {
-
-}
-
-.title {
-
-}
-
 .common__desc {
 
 }
@@ -372,4 +364,54 @@
     margin-top: 20px;
 }
 
+.sidebar .title {
+    width: 100px;
+}
 
+@media (max-width: 1300px) {
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: max-content 100px;
+    grid-template-areas: "social form logo" ". . copy";
+}
+
+@media (max-width: 1200px) {
+
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+    grid-template-areas: "freshy freshy freshy healthy"
+                         " slider-arrows slider-arrows slider-arrows healthy"
+                         " thirsty thirsty thirsty thirsty"
+                         "  slider-dots slider-dots orange orange";
+
+    .slider-arrows, .slider-dots, .orange {
+        height: 300px;
+    }
+
+    .slider-dots__item .slider-arrows__item {
+        width: 100%;
+        height: 100%;
+    }
+
+    .wrapper-down {
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+        grid-template-areas: "sdebar" "footer";
+    }
+
+    .common--row-rev {
+        padding-right: 90px;
+    }
+
+    .sidebar .common__desc {
+        max-width: 200px;
+    }
+
+    .sidebar {
+        padding-left: 130px;
+    }
+
+    .header {
+        grid-template-columns: repeat(3, max-content);
+    }
+
+}
