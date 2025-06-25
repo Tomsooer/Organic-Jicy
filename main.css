@@ -325,7 +325,7 @@
 
 .form__submit-btn {
     background-color: #00C2BA;
-    color: #000;
+    color: #fff;
     height: 40px;
     padding: 0 20px;
     text-transform: uppercase;
@@ -415,3 +415,69 @@
     }
 
 }
+
+@media (max-width: 760px) {
+    .footer {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "socials" "form" "logo" "copy" ;
+
+        padding: 40px 20px;
+
+        justify-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .header__nav {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-areas: "healthy" "slider-arrows" "freshy" "slider-dots" "orange";
+    }
+
+    .healthy {
+        padding-bottom: 30px;
+
+    }
+
+    .common--col-rev {
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+    .common--col-rev .common__desc, .thirsty .common__desc, .sidebar .common__desc {
+        max-width: unset;
+    }
+
+    .common--col-rev {
+        padding: 30px;
+    }
+
+    .sidebar {
+        padding-left: 30px;
+    }
+}
+
+@media (max-width: 350px) {
+    .common{
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .form__input {
+        width: 170px;
+    }
+
+    .header, .footer {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+}
+
