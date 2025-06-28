@@ -539,6 +539,49 @@
     .search {
         display: none;
     }
-}
 
+    .menu-icon {
+        display: block;
+      grid-area: menu-icon;
+        /*justify-self: end;*/
+    }
+
+    .header--mobile {
+        min-height: 100vh;
+        grid-template: "logo menuu-icon" max-content
+                       "nav nav" max-content
+                       "search search";
+        align-content: space-between;
+        justify-content: center;
+    }
+
+    .header--mobile .search, .header--mobile .header__nav {
+        display: block;
+    }
+
+    .header__nav {
+        transform: none;
+    }
+
+    .header__nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__nav a::after {
+        display: none;
+    }
+
+    .header__nav a {
+        padding: 10px 20px;
+    }
+
+    .no-scroll {
+        overflow: hidden;
+    }
+    button{
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+ 
 
