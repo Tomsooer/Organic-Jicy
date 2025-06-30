@@ -7,3 +7,11 @@ menuIcon.addEventListener('click', () => {
 	header.classList.toggle('header--mobile');
 	body.classList.toggle('no-scroll')
 });
+
+const  sliderArows = document.querySelector('.slider-arrows')
+	   sliderArows = sliderArows.querySelectorAll('.slider-arrows__item');
+       prev = sliderArows.querySelector('.slider-arrows__arrow--left')
+       prev = sliderArows.querySelector('.slider-arrows__arrow--right')
+
+console.log(sliderArows)
+

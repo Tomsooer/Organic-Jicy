@@ -374,9 +374,13 @@
     grid-template-areas: "social form logo" ". . copy";
 }
 
+.slider-arrows, .slider-dots, .orange {
+    height: 400px;
+}
+
 @media (max-width: 1200px) {
 
-    grid-template-rows: auto;
+    grid-template-rows: 1fr auto;
     grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
     grid-template-areas: "freshy freshy freshy healthy"
                          " slider-arrows slider-arrows slider-arrows healthy"
