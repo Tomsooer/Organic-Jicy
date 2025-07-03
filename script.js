@@ -39,3 +39,24 @@ function showSlideArrows(n = 0) {
 showSlideArows(slideIndex);
 
 
+const sliderDots = document.querySelector('.slider-dots')
+      sliderDots = sliderDots.querySelector('.slider-dots__item')
+      wrapperDots = sliderDots.querySelector('.slider-dots__nav')
+
+console.log(sliderDots)
+
+const dots = [];
+
+for (let i = 0; i < sliderDots.length; i++) {
+	console.log(i)
+	const dot = document.createElement('button');
+	console.log(dot);
+
+	dot.dataset.slideTo = i;
+
+	dot.classList.add('.slider-dots__nav-item');
+
+	wrapperDots.app
+}
+
+
