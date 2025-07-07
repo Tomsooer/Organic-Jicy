@@ -48,15 +48,35 @@ console.log(sliderDots)
 const dots = [];
 
 for (let i = 0; i < sliderDots.length; i++) {
-	console.log(i)
+	// console.log(i)
 	const dot = document.createElement('button');
-	console.log(dot);
-
+	// console.log(dot);
 	dot.dataset.slideTo = i;
-
 	dot.classList.add('.slider-dots__nav-item');
+	if (i == 0 ) dot.classList.add('.slider-dots__nav--active');
 
-	wrapperDots.app
+	if (i != 0) sliderDots[i].style.display = 'none';
+
+	dot.addEventListener('click', showSlideDots)
+
+	wrapperDots.append(dot)
+}
+
+function showSlideDots(e) {
+	console.log(e.target);
+	console.log(e.target.dataset.slideTo);
+
+	const sliderTo = e.target.dataset.slideTo
+
+	 console.log(sliderTo)
+	console.log(sliderDots[sliderTo])
+
+	sliderDots.forEach(item => item.style.display = 'none')
+	sliderDots[sliderTo].style.display = 'block';
+
+	console.log(dots);
+	dots.forEach(dot => dot.classList.remove('.slider-dots__nav-item--active'));
+	e.target.classList.add('.slider-dots__nav-item--active')
 }
 
 
