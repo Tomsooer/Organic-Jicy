@@ -6,10 +6,11 @@
                          "slider-arrows healthy slider-dots orange"
                           "freshy healthy slider-dots orange";
 
-    /*grid-template: "slider-arrows healthy thirsty thirsty" 3fr*/
-    /*               "slider-arrows healthy slider-dots orange" 1fr*/
-    /*               "freshy healthy slider-dots orange" 3fr / 2fr 1fr 1.5fr 1.5fr;*/
+/*    grid-template: "slider-arrows healthy thirsty thirsty" 3fr*/
+/*                   "slider-arrows healthy slider-dots orange" 1fr*/
+/*                   "freshy healthy slider-dots orange" 3fr / 2fr 1fr 1.5fr 1.5fr;*/
 }
+
 
 
 .slider-arrows {
@@ -30,7 +31,7 @@
 
 .slider-arrows__nav {
     position: absolute;
-    left: 0;
+    left: 50%;
     top: 50%;
     width: 100%;
     display: flex;
@@ -245,59 +246,73 @@
 
 .orange__arrow {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    color: red;
+    bottom: 20px;
+    right: 20px;
+    transition: opacity 0.2s;
 }
 
+.orange__arrow:hover {
+    opacity: 0.8;
+}
+
+.orange__arrow:active {
+    opacity: 0.6;
+}
 
 .wrapper-down {
     display: grid;
-    grid-template-columns: 4.5fr 1.5fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "footer sidebar";
+    /*grid-template-columns: 4.5fr 1.5fr;*/
+    /*grid-template-rows: 1fr;*/
+    /*grid-template-areas: "footer sidebar";*/
+
+    grid-template: "footer sidebar" 1fr / 4.5fr 1.5fr;
 }
 
 .footer {
     padding-top: 80px;
     grid-area: footer;
+    background-color: #2F2F2F;
+    color: #FFFFFF;
     display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr 1fr;
-    grid-template-rows: max-content 100%;
-    grid-template-areas: ". social form logo" " . . . copy ";
-    background: #2f2f2f;
-    color: #fff;
+    /*grid-template-columns: 1fr 1fr 1.5fr 1fr;*/
+    /*grid-template-rows: max-content 100px;*/
+    /*grid-template-areas: ". socials form logo"*/
+    /*                     ". . . copy";*/
+    grid-template: ". socials form logo" max-content
+                    ". . . copy" 100px / 1fr 1fr 1.5fr 1fr;
+    align-items: end;
     align-content: center;
-
 }
 
 .socials {
-   grid-area: socials;
+    grid-area: socials;
     display: flex;
     gap: 10px;
 }
 
 .socials__link {
-    border: 2px solid ;
+    border: 2px solid #FFFFFF;
     border-radius: 50%;
+
     width: 40px;
     height: 40px;
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.social__link:active {
-    opacity: 0.6;
-}
-
-.social__link:hover {
-    opacity: 0.8;
+    transition: opacity 0.2s;
 }
 
 .socials__icon {
     width: 20px;
     height: 20px;
+}
+
+.socials__icon:hover {
+    opacity: 0.8;
+}
+
+.socials__icon:active {
+    opacity: 0.6;
 }
 
 .form {
@@ -320,12 +335,17 @@
     width: 200px;
     padding: 0 20px;
     outline: none;
+    background-color: rgba(255, 255, 255, 0.8);
     text-transform: uppercase;
+}
+
+.form__input:focus {
+    background-color: rgba(255, 255, 255);
 }
 
 .form__submit-btn {
     background-color: #00C2BA;
-    color: #fff;
+    color: #FFFFFF;
     height: 40px;
     padding: 0 20px;
     text-transform: uppercase;
@@ -338,34 +358,32 @@
 }
 
 .form__submit-btn:active {
-    background-color: #00aaaa;
+    background-color: #00aaa3;
+}
+
+.logo-img {
+    fill: #999999;
+    justify-self: center;
+    transition: fill 0.2s;
+}
+
+.logo-img:hover {
+    fill: #00C2BA;
+}
+
+.footer__logo {
+    grid-area: logo;
 }
 
 .copy {
     grid-area: copy;
 }
 
+/*-----SIDEBAR-----*/
+
 .sidebar {
     grid-area: sidebar;
-    background: #00C2BA;
-}
-
-.common__desc {
-
-}
-
-.btn-btn__rounded {
-    border-radius: 20px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-}
-
-.sidebar p + .btn {
-    margin-top: 20px;
-}
-
-.sidebar .title {
-    width: 100px;
+    background-color: #00C2BA;
 }
 
 @media (max-width: 1300px) {
