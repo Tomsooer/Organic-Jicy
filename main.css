@@ -389,35 +389,48 @@
 @media (max-width: 1300px) {
     grid-template-columns: 1fr 1.5fr 1fr;
     grid-template-rows: max-content 100px;
-    grid-template-areas: "social form logo" ". . copy";
+    grid-template-areas: "social form logo"
+                         ". . copy";
+    padding-left: 5%;
 }
 
-.slider-arrows, .slider-dots, .orange {
-    height: 400px;
+/*.slider-arrows, .slider-dots, .orange {*/
+/*    height: 400px;*/
+/*}*/
+
+@media (max-width: 1300px) {
+    .footer {
+        grid-template-columns: 1fr 1.5fr 1fr;
+        grid-template-rows: max-content 100px;
+        grid-template-areas: "socials form logo"
+                             ". . copy";
+        padding-left: 5%;
+    }
 }
 
 @media (max-width: 1200px) {
-
-    grid-template-rows: 1fr auto;
-    grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
-    grid-template-areas: "freshy freshy freshy healthy"
-                         " slider-arrows slider-arrows slider-arrows healthy"
-                         " thirsty thirsty thirsty thirsty"
-                         "  slider-dots slider-dots orange orange";
+    .main {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+        grid-template-areas: "freshy freshy freshy healthy"
+                             "slider-arrows slider-arrows slider-arrows healthy"
+                             "thirsty thirsty thirsty thirsty"
+                             "slider-dots slider-dots orange orange";
+    }
 
     .slider-arrows, .slider-dots, .orange {
         height: 300px;
     }
 
-    .slider-dots__item .slider-arrows__item {
+    .slider-dots__item, .slider-arrows__item {
         width: 100%;
         height: 100%;
     }
 
     .wrapper-down {
-        grid-template-rows: auto;
         grid-template-columns: auto;
-        grid-template-areas: "sdebar" "footer";
+        grid-template-rows: auto;
+        grid-template-areas: "sidebar" "footer";
     }
 
     .common--row-rev {
@@ -434,20 +447,21 @@
 
     .header {
         grid-template-columns: repeat(3, max-content);
+        grid-template-areas: "logo nav search";
+        justify-content: space-between;
+        padding: 20px;
     }
-
 }
 
 @media (max-width: 760px) {
     .footer {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas: "socials" "form" "logo" "copy" ;
-
-        padding: 40px 20px;
-
+        grid-template-areas: "socials" "form" "logo" "copy";
         justify-items: center;
         text-align: center;
+        gap: 30px;
+        padding: 40px 20px;
     }
 }
 
@@ -460,12 +474,11 @@
 @media (max-width: 600px) {
     .main {
         grid-template-columns: 1fr;
-        grid-template-areas: "healthy" "slider-arrows" "freshy" "slider-dots" "orange";
+        grid-template-areas: "healthy" "slider-arrows" "freshy" "slider-dots" "thirsty" "orange";
     }
 
     .healthy {
         padding-bottom: 30px;
-
     }
 
     .common--col-rev {
@@ -477,16 +490,12 @@
         max-width: unset;
     }
 
-    .common--col-rev {
-        padding: 30px;
-    }
-
-    .sidebar {
-        padding-left: 30px;
+    .common--row-rev {
+        padding-right: 30px;
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 350px)   {
     .common{
         padding: 10px;
         gap: 15px;

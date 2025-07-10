@@ -1,82 +1,61 @@
 const menuIcon = document.querySelector('.menu-icon');
-header = document.querySelector('header');
-	body = document.querySelector(body);
+const header = document.querySelector('header');
+const body = document.querySelector('body');
 
 menuIcon.addEventListener('click', () => {
 	menuIcon.classList.toggle('menu-icon--active');
 	header.classList.toggle('header--mobile');
-	body.classList.toggle('no-scroll')
+	body.classList.toggle('no-scroll');
 });
 
-const  sliderArows = document.querySelector('.slider-arrows')
-	   sliderArows = sliderArows.querySelectorAll('.slider-arrows__item');
-       prev = sliderArows.querySelector('.slider-arrows__arrow--left')
-       next = sliderArows.querySelector('.slider-arrows__arrow--right')
-
-
-console.log(sliderArows)
-
+let sliderArrows = document.querySelector('.slider-arrows');
+const slidesArrows = sliderArrows.querySelectorAll('.slider-arrows__item');
+const prev = sliderArrows.querySelector('.slider-arrows__arrow--left');
+const next = sliderArrows.querySelector('.slider-arrows__arrow--right');
 
 let slideIndex = 0;
 
-prev.addEventListener('click', () => showSlideArrows (-1) );
-next.addEventListener('click', () => showSlideArrows (1) );
+prev.addEventListener('click', () => showSlideArrows(-1));
+next.addEventListener('click', () => showSlideArrows(1));
 
 function showSlideArrows(n = 0) {
-	console.log(n)
-
 	slideIndex += n;
+	if (slideIndex < 0) slideIndex = slidesArrows.length - 1;
+	if (slideIndex >= slidesArrows.length) slideIndex = 0;
 
-	console.log(slideIndex);
-
-	if (slideIndex < 0) slideIndex = sliderArows.length - 1;
-	if (slideIndex >= sliderArows.length) slideIndex = 0;
-
-	sliderArows.forEach(item => item.style.display = 'none')
-	sliderArows[slideIndex].style.display = 'block'
+	slidesArrows.forEach(item => item.style.display = 'none');
+	slidesArrows[slideIndex].style.display = 'block';
 }
 
-showSlideArows(slideIndex);
+showSlideArrows(slideIndex);
 
 
-const sliderDots = document.querySelector('.slider-dots')
-      sliderDots = sliderDots.querySelector('.slider-dots__item')
-      wrapperDots = sliderDots.querySelector('.slider-dots__nav')
-
-console.log(sliderDots)
+const sliderDots = document.querySelector('.slider-dots');
+const slidesDots = sliderDots.querySelectorAll('.slider-dots__item');
+let wrapperDots = sliderDots.querySelector('.slider-dots__nav');
 
 const dots = [];
 
-for (let i = 0; i < sliderDots.length; i++) {
-	// console.log(i)
+for (let i = 0; i < slidesDots.length; i++) {
 	const dot = document.createElement('button');
-	// console.log(dot);
-	dot.dataset.slideTo = i;
-	dot.classList.add('.slider-dots__nav-item');
-	if (i == 0 ) dot.classList.add('.slider-dots__nav--active');
+	dot.dataset.slideTo = i.toString();
+	dot.classList.add('slider-dots__nav-item');
+	if (i === 0) dot.classList.add('slider-dots__nav-item--active');
 
-	if (i != 0) sliderDots[i].style.display = 'none';
+	if (i !== 0) slidesDots[i].style.display = 'none';
 
-	dot.addEventListener('click', showSlideDots)
+	dot.addEventListener('click', showSlideDots);
 
-	wrapperDots.append(dot)
+	wrapperDots.append(dot);
+	dots.push(dot);
 }
 
 function showSlideDots(e) {
-	console.log(e.target);
-	console.log(e.target.dataset.slideTo);
+	const slideTo = e.target.dataset.slideTo;
 
-	const sliderTo = e.target.dataset.slideTo
+	slidesDots.forEach(item => item.style.display = 'none');
+	slidesDots[slideTo].style.display = 'block';
 
-	 console.log(sliderTo)
-	console.log(sliderDots[sliderTo])
-
-	sliderDots.forEach(item => item.style.display = 'none')
-	sliderDots[sliderTo].style.display = 'block';
-
-	console.log(dots);
-	dots.forEach(dot => dot.classList.remove('.slider-dots__nav-item--active'));
-	e.target.classList.add('.slider-dots__nav-item--active')
+	dots.forEach(dot => dot.classList.remove('slider-dots__nav-item--active'));
+	e.target.classList.add('slider-dots__nav-item--active');
 }
-
-
